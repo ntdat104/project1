@@ -25,7 +25,6 @@ body {
     color: $text-color;
     line-height: 1.4;
     font-weight: 400;
-    padding-bottom: 20rem;
 }
 
 @mixin flex($align: flex-start, $justify: flex-start, $wrap: nowrap, $dir: row) {
@@ -310,5 +309,236 @@ body {
     text-overflow: ellipsis;
     &--2 {
         -webkit-line-clamp: 2;
+    }
+}
+.partner {
+    margin-bottom: 19rem;
+    &__inner {
+        max-width: 83rem;
+        text-align: center;
+    }
+    &__title {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 7rem;
+        padding-bottom: 7rem;
+        border-bottom: 1px solid currentColor;
+    }
+    &__list {
+        @include flex(center, space-between);
+    }
+}
+.connect {
+    text-align: center;
+    margin-bottom: 17rem;
+    &__title {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 3.5rem;
+    }
+    &__notice {
+        font-size: 1.8em;
+        font-weight: 600;
+        margin-bottom: 6rem;
+        span {
+            color: $primary-color;
+        }
+    }
+    &__list {
+        @include flex(stretch, space-between)
+    }
+    &__item {
+        width: calc(25% - 22.5px);
+    }
+}
+.subscribe {
+    margin-bottom: 5rem;
+    &__inner {
+        @include flex(flex-start, space-between);
+        padding-bottom: 8rem;
+        border-bottom: 2px solid currentColor;
+    }
+    &__title,
+    &__info {
+        width: 50%;
+    }
+    &__title {
+        font-size: 2rem;
+        font-weight: 600;
+        max-width: 43rem;
+    }
+    &__form {
+        @include flex(center, space-between);
+        background-color: #f2f1f6;
+        padding: 2rem;
+        margin-bottom: 3.5rem;
+    }
+    &__input,
+    &__button {
+        padding: 0;
+    }
+    &__input {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        font-size: 1.4rem;
+        font-family: 'Poppins', sans-serif;
+        flex-grow: 1;
+        padding-right: 1.5rem;
+    }
+    &__button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+    &__social i {
+        margin-left: 4rem;
+        font-size: 2rem;
+    }
+}
+.footer {
+    &__inner {
+        @include flex(flex-start, space-between);
+    }
+    &__item {
+        width: 25%;
+    }
+    &__link {
+        text-decoration: none;
+        color: $text-color;
+        font-size: 1.4rem;
+        display: block;
+        margin-bottom: 3rem;
+        width: fit-content;
+    }
+}
+
+
+@media screen and (max-width: 1023px) {
+    .banner {
+        padding: 5rem 0;
+        &__heading {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+        &__desc {
+            font-size: 1.6rem;
+        }
+        &__buttons {
+            .btn {
+                font-size: 1.4rem;
+            }
+        }
+    }
+    .category {
+        &__item {
+            width: calc(50% - 22.5px);
+            margin-bottom: 2.5rem;
+        }
+    }
+    .feature {
+        padding-top: 10rem;
+        &__item {
+            flex-direction: column;
+            margin-bottom: 8rem;
+            &:nth-child(even) {
+                flex-direction: column;
+                .feature__info {
+                    padding: 0;
+                }
+            }
+            &:nth-child(odd) .feature__info{
+                padding: 0;
+            }
+        }
+        &__image,
+        &__info {
+            width: 100%;
+        }
+        &__image {
+            margin-bottom: 2rem;
+        }
+        &__image img {
+            margin: 0 auto;
+        }
+    }
+    .partner {
+        margin-bottom: 10rem;
+        &__title {
+            padding-bottom: 4rem;
+            margin-bottom: 4rem;
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .header__menu {
+        display: none;
+    }
+    .category {
+        &__item {
+            width: 100%;
+            margin-bottom: 2.5rem;
+        }
+        &__image {
+            height: 15rem;
+        }
+    }
+    .partner {
+        margin-bottom: 5rem;
+        &__list {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        &__item {
+            width: 50%;
+            margin-bottom: 2rem;
+            img {
+                margin: 0 auto;
+            }
+        }
+    }
+    .connect {
+        margin-bottom: 5rem;
+        &__list {
+            flex-wrap: wrap;
+        }
+        &__item {
+            width: calc(50% - 1rem);
+            margin-bottom: 2rem;
+        }
+    }
+    .subscribe {
+        &__inner {
+            flex-direction: column;
+        }
+        &__title {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+        &__info {
+            width: 100%;
+        }
+    }
+    .footer {
+        &__inner {
+            flex-wrap: wrap;
+        }
+        &__item {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+    }
+}
+@media screen and (max-width: 479px) {
+    .banner {
+        &__heading {
+            font-size: 3rem;
+        }
+        &__buttons {
+            .btn {
+                font-size: 1.2rem;
+            }
+        }
     }
 }
