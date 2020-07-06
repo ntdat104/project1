@@ -70,6 +70,9 @@ body {
                 color: $primary-color;
             }
         }
+        &-bar {
+            display: none;
+        }
     }
 }
 
@@ -391,6 +394,8 @@ body {
         border: none;
         outline: none;
         cursor: pointer;
+        color: $text-color;
+        font-size: 1.4rem;
     }
     &__social i {
         margin-left: 4rem;
@@ -473,11 +478,13 @@ body {
 }
 @media screen and (max-width: 767px) {
     .header {
-        &__inner {
-            justify-content: center;
-        }
         &__menu {
-            display: none;
+            &-item {
+                display: none;
+            }
+            &-bar {
+                display: block;
+            }
         }
     }
     .category {

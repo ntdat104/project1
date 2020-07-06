@@ -66,6 +66,9 @@ body {
 .header__menu-link:hover {
   color: #ffc87a;
 }
+.header__menu-bar {
+  display: none;
+}
 
 .logo {
   font-size: 2.5rem;
@@ -412,6 +415,8 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
+  color: #1a2b5f;
+  font-size: 1.4rem;
 }
 .subscribe__social i {
   margin-left: 4rem;
@@ -492,11 +497,11 @@ body {
   }
 }
 @media screen and (max-width: 767px) {
-  .header__inner {
-    justify-content: center;
-  }
-  .header__menu {
+  .header__menu-item {
     display: none;
+  }
+  .header__menu-bar {
+    display: block;
   }
 
   .category__item {
