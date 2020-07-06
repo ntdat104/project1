@@ -11,11 +11,6 @@ $text-gray: #c6cad7;
     -webkit-box-sizing: border-box;
 }
 
-img {
-    display: block;
-    max-width: 100%;
-}
-
 html {
     font-size: 62.5%; // 1rem = 10px
 }
@@ -25,6 +20,15 @@ body {
     color: $text-color;
     line-height: 1.4;
     font-weight: 400;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
 }
 
 @mixin flex($align: flex-start, $justify: flex-start, $wrap: nowrap, $dir: row) {
@@ -48,7 +52,7 @@ body {
 
 .header {
     padding-top: 4rem;
-    &__inner {
+    &__container {
         @include flex(center ,space-between)
     }
     &__menu {
@@ -63,7 +67,6 @@ body {
         }
         &-link {
             font-size: 1.6rem;
-            text-decoration: none;
             color: $text-color;
             transition: color 0.3s linear, border 0.3s linear;
             &:hover {
@@ -80,16 +83,14 @@ body {
     font-size: 2.5rem;
     font-weight: 600;
     color: $text-color;
-    text-decoration: none;
     &__text {
         color: $primary-color;
     }
 }
 
 .banner {
-    padding: 15rem 0;
+    margin: 15rem auto;
     max-width: 70rem;
-    margin: 0 auto;
     text-align: center;
     &__heading {
         font-weight: 700;
@@ -105,6 +106,10 @@ body {
         @include flex(stretch, center);
         .btn {
             margin: 0 1rem;
+            transition: color 0.3s linear, border 0.3s linear;
+        }
+        .btn:first-child:hover {
+            color: $primary-color;
         }
     }
 }
@@ -117,7 +122,6 @@ body {
     color: $text-color;
     padding: 1.5rem 3rem;
     display: inline-block;
-    text-decoration: none;
     border: none;
     background-color: transparent;
     &--border {
@@ -126,7 +130,7 @@ body {
     &--rounded {
         border-radius: 5rem;
     }
-    &--primary {
+    &--gradient {
         background: rgb(255,234,123);
         background: linear-gradient(180deg, rgba(255,234,123,1) 0%, rgba(255,202,122,1) 100%);
     }
@@ -169,7 +173,6 @@ body {
     }
     &__details {
         font-size: 1.4rem;
-        text-decoration: none;
         color: $text-gray;
         i {
             margin-left: 1.5rem;
@@ -185,7 +188,7 @@ body {
 }
 
 .feature {
-    padding-top: 18rem;
+    margin: 18rem 0;
     &__item {
         @include flex(center);
         margin-bottom: 15rem;
@@ -199,6 +202,9 @@ body {
             .feature__info {
                 padding-right: 10rem;
             }
+        }
+        &:last-child {
+            margin-bottom: 0;
         }
     }
     &__image,
@@ -223,7 +229,6 @@ body {
             text-decoration: underline;
             font-size: 1.8rem;
             &--circle {
-                text-decoration: none;
                 position: relative;
                 padding-left: 3rem;
                 &:before {
@@ -287,7 +292,7 @@ body {
             }
         }
         &__title {
-            width: 70%;
+            // width: 70%;
             font-size: 1.6rem;
             margin-bottom: 1rem;
             font-weight: 600;
@@ -305,6 +310,7 @@ body {
         }
     }
 }
+
 .text-clamp {
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -314,9 +320,10 @@ body {
         -webkit-line-clamp: 2;
     }
 }
+
 .partner {
-    margin-bottom: 19rem;
-    &__inner {
+    margin-bottom: 18rem;
+    &__container {
         max-width: 83rem;
         text-align: center;
     }
@@ -331,9 +338,10 @@ body {
         @include flex(center, space-between);
     }
 }
+
 .connect {
+    margin-bottom: 18rem;
     text-align: center;
-    margin-bottom: 17rem;
     &__title {
         font-size: 2.5rem;
         font-weight: 600;
@@ -354,9 +362,10 @@ body {
         width: calc(25% - 22.5px);
     }
 }
+
 .subscribe {
-    margin-bottom: 5rem;
-    &__inner {
+    margin-bottom: 8rem;
+    &__container {
         @include flex(flex-start, space-between);
         padding-bottom: 8rem;
         border-bottom: 2px solid currentColor;
@@ -375,6 +384,7 @@ body {
         background-color: #f2f1f6;
         padding: 2rem;
         margin-bottom: 3.5rem;
+        border-radius: 1rem;
     }
     &__input,
     &__button {
@@ -402,15 +412,15 @@ body {
         font-size: 2rem;
     }
 }
+
 .footer {
-    &__inner {
+    &__container {
         @include flex(flex-start, space-between);
     }
     &__item {
         width: 25%;
     }
     &__link {
-        text-decoration: none;
         color: $text-color;
         font-size: 1.4rem;
         display: block;
@@ -476,6 +486,7 @@ body {
         }
     }
 }
+
 @media screen and (max-width: 767px) {
     .header {
         &__menu {
@@ -521,7 +532,7 @@ body {
         }
     }
     .subscribe {
-        &__inner {
+        &__container {
             flex-direction: column;
         }
         &__title {
@@ -533,7 +544,7 @@ body {
         }
     }
     .footer {
-        &__inner {
+        &__container {
             flex-wrap: wrap;
         }
         &__item {
@@ -542,6 +553,7 @@ body {
         }
     }
 }
+
 @media screen and (max-width: 479px) {
     .banner {
         &__heading {
