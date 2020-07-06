@@ -432,7 +432,7 @@ a {
 
 @media screen and (max-width: 1023px) {
     .banner {
-        padding: 5rem 0;
+        margin: 5rem 0;
         &__heading {
             font-size: 4rem;
             margin-bottom: 2rem;
@@ -453,7 +453,7 @@ a {
         }
     }
     .feature {
-        padding-top: 10rem;
+        margin: 10rem 0;
         &__item {
             flex-direction: column;
             margin-bottom: 8rem;
